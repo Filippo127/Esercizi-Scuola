@@ -13,7 +13,6 @@ le informazioni di un determinato volo dato in input;
 codice volo, Città, orario, voli dove lo stato è B;
 Visualizzare le informazioni dei voli in partenza per una città data in input
 Dato in input (?) l'orario attuale/ acquisito l'orario di sistema visualizzare i voli il cui orario programmato è superato e non è ancora atterrato/partito e modicarlo in D.
-
 */
 
 #include <iostream>
@@ -23,6 +22,7 @@ using namespace std;
 
 int main()
 {
+    string choose; 
     string airline [5] = {"Ryanair", "Delta Airlines", "Vueling", "ITA airways", "Alitalia"};
     string flight_n [5] = {"FR 06885", "DL1099", "VY 06534", "IT 88184", "AZ 01746"};
     string departes_arrives [5] = {"P", "P", "A", "A", "P"};
@@ -47,6 +47,12 @@ int main()
     cout<<"\n";
     cout<<"1. Visualizzare Informazioni di un volo ";
     cout<<"2. Visualizzare informazioni voli in partenza";
+    cout<<"3. VIsualizzare i voli in imbarco";
+    
+    if (choose == "1") {
+        cout<<"Di che volo vuole informazioni?";
+        cin>> 
+    }
     
     
 
