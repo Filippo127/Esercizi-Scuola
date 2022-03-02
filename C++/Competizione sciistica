@@ -1,0 +1,58 @@
+/*Realizzare un programma che ci permette di simulare la classifica di una gara sciistica:
+I 10 partecipanti sono individuati attraverso:
+1. Il numero della pettorina (fatto);
+2. Il tempo medio di discesa (fatto);
+1)Visualizzare il tempo medio di discesa, il tempo di discesa massimo e quello minimo (fatto);
+2)Dato in input il numero del pettorale, Visualizzare il relativo tempo di discesa (fatto) ;
+3)Modificare il tempo di discesa del partecipante con la pettorina n°5 (fatto);
+4)Sostituire il tempo di discesa del partecipante n°4 con quello del partecipante n°3 (fatto);
+5)Attraverso l'utilizzo di un flag segnalare attraverso un output se almeno un partecipante ha
+registrato un tempo di discesa inferiore a 15 secondi e indicarne il numero di pettorina
+e la dicitura "World Record" (fatto) */
+
+#include <iostream>
+using namespace std;
+int main()
+{
+cout << "----------------------------------" <<endl;
+cout << "------- Gara Sciistica Admin -----" <<endl;
+cout << "----------------------------------" <<endl;
+bool flag = true;
+string scelta;
+double media = 0;
+string giocatori[10] = {"Lampa Dario","Sara Cinesca","Cicoria Bagnata","Azzurra La scala","Santo Cervello","Re
+mo Felice","Remo La Barca","Domenica Torno","Ester NATO","Sasso Lino"};
+//i nomi strani sono stati presi dal seguente sito: https://www.nomix.it/nomi-cognomi-strani-assurdi-ridicoli.php
+string n_pettorina[10] = {"55","98","54","15","46","93","78","14","63","69"};
+double tempi_discesa [10] = {1.08,1.09,1.12,1.20,1.23,1.33,1.34,1.37,1.39,1.40};
+double partecipante4 = tempi_discesa [3], partecipante3 = tempi_discesa [2];
+tempi_discesa[3] = partecipante3, tempi_discesa [2] = partecipante4;
+cout<<"Seleziona numero giocatore ";
+for(int i = 0; i<10; i++){
+cin>>scelta;
+if (scelta == n_pettorina[i]){
+cout << tempi_discesa[i]<<endl;
+break;
+}
+}
+for (int i= 0; i<10; i++) {
+media = media + tempi_discesa [i];
+}
+media= media/10;
+for (int i= 0; i<10; i++) {
+cout<<"Il giocatore con la pettorina: "<<n_pettorina[i]<<" Ha fatto il seguente tempo: "<<tempi_discesa [i]<<e
+ndl;
+}
+int i =0;
+while (flag == true) {
+if (tempi_discesa [i] < 15) {
+cout<<"World Record"<<endl;
+flag = false;
+
+}
+i++;
+}
+cout<<"Il tempo di discesa minimo è stato di: "<<tempi_discesa [0]<<endl;
+cout<<"Il tempo di discesa masssimo è stato di: "<<tempi_discesa [9]<<endl;
+return 0;
+}
