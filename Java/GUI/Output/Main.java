@@ -1,4 +1,3 @@
-package GUI.Output;
 import javax.swing.*;
 import java.awt.*;
 public class Main extends JFrame {
